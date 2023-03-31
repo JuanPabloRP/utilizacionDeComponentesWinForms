@@ -24,13 +24,13 @@ namespace WindowsFormsApp1
 
         private void imgAgregar_Click(object sender, EventArgs e)
         {
-            OpenFileDialog CajaDeBusquedad = new OpenFileDialog();
-            CajaDeBusquedad.Multiselect = true;
+            OpenFileDialog CajaDeBusqueda = new OpenFileDialog();
+            CajaDeBusqueda.Multiselect = true;
 
-            if (CajaDeBusquedad.ShowDialog() == DialogResult.OK)
+            if (CajaDeBusqueda.ShowDialog() == DialogResult.OK)
             {
-                archivosMP3 = CajaDeBusquedad.SafeFileNames;
-                rutasArchivosMP3 = CajaDeBusquedad.FileNames;
+                archivosMP3 = CajaDeBusqueda.SafeFileNames;
+                rutasArchivosMP3 = CajaDeBusqueda.FileNames;
                 foreach (var archivoMP3 in archivosMP3)
                 {
                     lstCanciones.Items.Add(archivoMP3);
@@ -66,22 +66,39 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void imgAtras_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
             if (Reproductor.currentMedia != null)
             {
-                
+                if(lstCanciones.SelectedIndex != 0)
+                {
+                    lstCanciones.SelectedIndex -= 1;
+                }
+                else
+                {
+                    lstCanciones.SelectedIndex = lstCanciones.Items.Count - 1;
+
+                }
             }
+
+            
+            
         }
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            Reproductor.Ctlcontrols.next();
+            if (Reproductor.currentMedia != null)
+            {
+                if (lstCanciones.SelectedIndex != lstCanciones.Items.Count - 1)
+                {
+                    lstCanciones.SelectedIndex += 1;
+                }
+                else
+                {
+                    lstCanciones.SelectedIndex = 0;
+                }
+            }
         }
 
         private void imgAdelante_Click(object sender, EventArgs e)
@@ -89,6 +106,11 @@ namespace WindowsFormsApp1
 
         }
 
-        
+        private void btnIrANavegador_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Navegador browser = new Navegador();
+            browser.Show();
+        }
     }
 }
