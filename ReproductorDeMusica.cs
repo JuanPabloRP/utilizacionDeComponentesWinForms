@@ -101,16 +101,18 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void imgAdelante_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnIrANavegador_Click(object sender, EventArgs e)
         {
             Hide();
             Navegador browser = new Navegador();
             browser.Show();
+        }
+
+        private void btnIrAPDF_Click(object sender, EventArgs e)
+        {
+            Hide();
+            PDF pdfPage = new PDF();
+            pdfPage.Show();
         }
     }
 }

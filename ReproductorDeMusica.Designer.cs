@@ -149,6 +149,7 @@ namespace WindowsFormsApp1
             this.btnIrAPDF.TabIndex = 12;
             this.btnIrAPDF.Text = "Ir al PDF";
             this.btnIrAPDF.UseVisualStyleBackColor = false;
+            this.btnIrAPDF.Click += new System.EventHandler(this.btnIrAPDF_Click);
             // 
             // pnlContainerReproductor
             // 
@@ -174,6 +175,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.Reproductor);
             this.Controls.Add(this.pnlContainerReproductor);
             this.Name = "ReproductorDeMusica";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reproductor de música";
             ((System.ComponentModel.ISupportInitialize)(this.Reproductor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAgregar)).EndInit();
