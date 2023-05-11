@@ -13,6 +13,13 @@ namespace WindowsFormsApp1
 {
     public partial class ReproductorDeMusica : Form
     {
+    
+        /// <summary>
+        ///  Juan Pablo Roldan Patiño
+        ///  2023
+        ///  haciendo uso de librerias de terceros para construir un reproductos de musica, un navegador, y un pdf viewer
+        /// </summary>
+        
         bool play = false;  
         string[] archivosMP3;
         string[] rutasArchivosMP3;
